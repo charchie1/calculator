@@ -2,13 +2,14 @@ package com.charlie.calculator;
 
 import org.junit.jupiter.api.Test;
 
+import static com.charlie.calculator.Calculator.add;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 class CalculatorTest {
     @Test
     void testAdd() {
-        assertEquals(3, Calculator.add(1, 2));
+        assertEquals(3, add(1, 2));
 
     }
 
@@ -16,7 +17,7 @@ class CalculatorTest {
     void testAddWithOverflow() {
         try {
             //noinspection ResultOfMethodCallIgnored
-            Calculator.add(2147483647, 1);
+            add(2147483647, 1);
             fail();
 
         } catch (ArithmeticException e) {
